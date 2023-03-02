@@ -11,7 +11,7 @@ export const deleteGastoAction = (id) => {
   console.log(id);
     return async function (dispatch) {
       try {
-        const json = await axios.delete(`${URL_BACK}/${id}`);
+        const json = await axios.delete(`${URL_BACK}/delete/${id}`);
         console.log(json);
         return json
       } catch (e) {
