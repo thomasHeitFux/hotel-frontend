@@ -4,7 +4,7 @@ import {
   GET_GASTOS_REJECTED,
   GET_GASTOS_SUCCESS,
 } from "../types/gastosTypes";
-const URL_BACK = 'http://localhost:3001/';
+const URL_BACK = 'https://lively-violet-9664.fly.dev/';
 
 
 export const getGastosAction = () => {

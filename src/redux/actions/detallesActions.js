@@ -4,7 +4,7 @@ import {
     GET_DETALLES_REJECTED,
     GET_DETALLES_SUCCESS,
 } from "../types/detallesTypes";
-const URL_BACK = 'http://localhost:3001/detalles';
+const URL_BACK = 'https://lively-violet-9664.fly.dev/detalles';
 
 
 export const getDetalles = () => {

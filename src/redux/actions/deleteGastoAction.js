@@ -4,7 +4,7 @@ import {
     GET_DELETE_REJECTED,
     GET_DELETE_SUCCESS,
 } from "../types/deleteTypes";
-const URL_BACK = 'http://localhost:3001/delete';
+const URL_BACK = 'https://lively-violet-9664.fly.dev/delete';
 
 
 export const deleteGastoAction = (id) => {
