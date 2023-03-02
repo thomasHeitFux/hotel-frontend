@@ -4,7 +4,7 @@ import {
     GET_ESTRUCTURAS_REJECTED,
     GET_ESTRUCTURAS_SUCCESS,
 } from "../types/estructurasTypes";
-const URL_BACK = 'https://lively-violet-9664.fly.dev/estructuras';
+const URL_BACK = 'https://polished-cherry-8428.fly.dev/estructuras';
 
 
 export const getEstructuras = () => {

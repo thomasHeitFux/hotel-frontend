@@ -4,7 +4,7 @@ import {
   GET_TIPOS_REJECTED,
   GET_TIPOS_SUCCESS,
 } from "../types/tiposTypes";
-const URL_BACK = 'https://lively-violet-9664.fly.dev/tipos';
+const URL_BACK = 'https://polished-cherry-8428.fly.dev/tipos';
 
 
 export const getTipos = () => {
