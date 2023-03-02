@@ -4,7 +4,7 @@ import {
     GET_ESTRUCTURAS_REJECTED,
     GET_ESTRUCTURAS_SUCCESS,
 } from "../types/estructurasTypes";
-const URL_BACK = 'https://polished-cherry-8428.fly.dev/estructuras';
+import { URL_BACK } from "./url";
 
 
 export const getEstructuras = () => {

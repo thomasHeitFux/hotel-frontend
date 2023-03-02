@@ -4,7 +4,7 @@ import {
   GET_GASTOS_REJECTED,
   GET_GASTOS_SUCCESS,
 } from "../types/gastosTypes";
-const URL_BACK = 'https://polished-cherry-8428.fly.dev/';
+import { URL_BACK } from "./url";
 
 
 export const getGastosAction = () => {

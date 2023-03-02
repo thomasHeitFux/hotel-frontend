@@ -4,7 +4,7 @@ import {
     GET_DELETE_REJECTED,
     GET_DELETE_SUCCESS,
 } from "../types/deleteTypes";
-const URL_BACK = 'https://polished-cherry-8428.fly.dev/delete';
+import { URL_BACK } from "./url";
 
 
 export const deleteGastoAction = (id) => {

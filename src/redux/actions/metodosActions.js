@@ -4,7 +4,7 @@ import {
   GET_METODOS_REJECTED,
   GET_METODOS_SUCCESS,
 } from "../types/metodosTypes";
-const URL_BACK = 'https://polished-cherry-8428.fly.dev/metodos';
+import { URL_BACK } from "./url";
 
 
 export const getMetodos = () => {

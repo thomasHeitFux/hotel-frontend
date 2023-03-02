@@ -4,7 +4,7 @@ import {
   GET_TIPOS_REJECTED,
   GET_TIPOS_SUCCESS,
 } from "../types/tiposTypes";
-const URL_BACK = 'https://polished-cherry-8428.fly.dev/tipos';
+import { URL_BACK } from "./url";
 
 
 export const getTipos = () => {

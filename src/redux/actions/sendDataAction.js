@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const URL_BACK = 'https://polished-cherry-8428.fly.dev/';
+import { URL_BACK } from "./url";
 
 
 export const sendDataAction = (payload) => {

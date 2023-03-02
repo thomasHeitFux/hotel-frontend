@@ -4,7 +4,7 @@ import {
     GET_DETALLES_REJECTED,
     GET_DETALLES_SUCCESS,
 } from "../types/detallesTypes";
-const URL_BACK = 'https://polished-cherry-8428.fly.dev/detalles';
+import { URL_BACK } from "./url";
 
 
 export const getDetalles = () => {
