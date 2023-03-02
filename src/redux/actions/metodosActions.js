@@ -11,7 +11,7 @@ export const getMetodos = () => {
     return async function (dispatch) {
       dispatch({ type: GET_METODOS_PENDING });
       try {
-        const json = await axios(`${URL_BACK}`);
+        const json = await axios(`${URL_BACK}/metodos`);
         return dispatch({
           type: GET_METODOS_SUCCESS,
           payload: json.data,

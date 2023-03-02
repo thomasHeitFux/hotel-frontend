@@ -11,7 +11,7 @@ export const getEstructuras = () => {
     return async function (dispatch) {
       dispatch({ type: GET_ESTRUCTURAS_PENDING });
       try {
-        const json = await axios(`${URL_BACK}`);
+        const json = await axios(`${URL_BACK}/estructuras`);
         return dispatch({
           type: GET_ESTRUCTURAS_SUCCESS,
           payload: json.data,

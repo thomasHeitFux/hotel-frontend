@@ -11,7 +11,7 @@ export const getDetalles = () => {
     return async function (dispatch) {
       dispatch({ type: GET_DETALLES_PENDING });
       try {
-        const json = await axios(`${URL_BACK}`);
+        const json = await axios(`${URL_BACK}/detalles`);
         return dispatch({
           type: GET_DETALLES_SUCCESS,
           payload: json.data,

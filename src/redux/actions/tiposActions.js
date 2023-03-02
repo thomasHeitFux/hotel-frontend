@@ -11,7 +11,7 @@ export const getTipos = () => {
     return async function (dispatch) {
       dispatch({ type: GET_TIPOS_PENDING });
       try {
-        const json = await axios(`${URL_BACK}`);
+        const json = await axios(`${URL_BACK}/tipos`);
         return dispatch({
           type: GET_TIPOS_SUCCESS,
           payload: json.data,
