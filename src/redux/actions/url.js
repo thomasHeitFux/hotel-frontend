@@ -1,1 +1,1 @@
-export const URL_BACK = "https://holy-bush-8629.fly.dev/"
+export const URL_BACK = "https://holy-bush-8629.fly.dev"
