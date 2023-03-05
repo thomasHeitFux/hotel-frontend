@@ -8,7 +8,7 @@ import { deleteGastoAction } from "../redux/actions/deleteGastoAction";
 export const Gastos = () => {
     const [data, setData] = useState({})
     const dispatch = useDispatch()
-   
+
 
     useEffect(() => {
         dispatch(getGastosAction());
@@ -31,18 +31,18 @@ export const Gastos = () => {
             }
         })
     }
-    const handleExport = ()=>{
+    const handleExport = () => {
         console.log(data);
     }
     return (
         <div className="p-8">
-           <button onClick={()=>handleExport()}>Export</button>
+            <button onClick={(e) => handleExport(e)}>Export</button>
             <table className="w-full" id="tabla">
 
                 {gastos.gastos.map((e) => {
-                    setData({tipo: e.Tipos[0].name,estructura: e.Estructuras[0].name,importe: e.importe,detalle:e.Detalles[0].name,metodo: e.Metodos[0].name,responsable: e.Responsables[0].name,fecha: e.fecha})
-                   
-                    
+                    // setData({ tipo: e.Tipos[0].name, estructura: e.Estructuras[0].name, importe: e.importe, detalle: e.Detalles[0].name, metodo: e.Metodos[0].name, responsable: e.Responsables[0].name, fecha: e.fecha })
+
+
                     return (<tr key={e.id} className="m-3 bg-gray-100 flex p-2 justify-between">
 
 
