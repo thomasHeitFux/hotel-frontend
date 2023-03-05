@@ -42,40 +42,40 @@ export const Gastos = () => {
 
                 {gastos.gastos.map((e) => {
 
-                    return (<div key={e.id} className="m-3 bg-gray-100 flex p-2 justify-between">
+                    return (<tr key={e.id} className="m-3 bg-gray-100 flex p-2 justify-between">
 
 
                         <div className="">
-                            <h1 className="font-bold uppercase">Tipo:</h1>
+                            {/* <h1 className="font-bold uppercase">Tipo:</h1> */}
                             <h1>{e.Tipos[0].name}</h1>
                         </div>
                         <div>
-                            <h1 className="font-bold uppercase">Estructura:</h1>
+                            {/* <h1 className="font-bold uppercase">Estructura:</h1> */}
                             <h1>{e.Estructuras[0].name}</h1>
                         </div>
                         <div>
-                            <h1 className="font-bold uppercase">importe:</h1>
+                            {/* <h1 className="font-bold uppercase">importe:</h1> */}
                             <h1>{e.importe}€</h1>
 
                         </div>
                         <div>
-                            <h1 className="font-bold uppercase">detalle:</h1>
+                            {/* <h1 className="font-bold uppercase">detalle:</h1> */}
                             <h1>{e.Detalles[0].name}</h1>
                         </div>
                         <div>
-                            <h1 className="font-bold uppercase">metodo:</h1>
+                            {/* <h1 className="font-bold uppercase">metodo:</h1> */}
                             <h1>{e.Metodos[0].name?e.Metodos[0].name:"arreglar"}</h1>
                         </div>
                         <div>
-                            <h1 className="font-bold uppercase">responsable:</h1>
+                            {/* <h1 className="font-bold uppercase">responsable:</h1> */}
                             <h1>{e.Responsables[0].name}</h1>
                         </div>
                         <div>
-                            <h1 className="font-bold uppercase">Fecha:</h1>
+                            {/* <h1 className="font-bold uppercase">Fecha:</h1> */}
                             <h1>{e.fecha}</h1>
                         </div>
                         <button onClick={() => show(e.id)} className="bg-red-500 duration-300 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">X</button>
-                    </div>
+                    </tr>
                     )
                 })}
 
