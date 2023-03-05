@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getGastosAction } from "../redux/actions/getGastosAction";
 import { useDispatch, useSelector } from "react-redux";
 import swal from "sweetalert";
@@ -6,7 +6,7 @@ import { deleteGastoAction } from "../redux/actions/deleteGastoAction";
 
 
 export const Gastos = () => {
-
+    const [data, setData] = useState({})
     const dispatch = useDispatch()
    
 
@@ -31,9 +31,12 @@ export const Gastos = () => {
             }
         })
     }
+    const handleExport = ()=>{
+        console.log();
+    }
     return (
         <div className="p-8">
-           
+           <button onClick={handleExport}>Export</button>
             <table className="w-full" id="tabla">
 
                 {gastos.gastos.map((e) => {
@@ -43,31 +46,38 @@ export const Gastos = () => {
 
                         <div className="">
                             {/* <h1 className="font-bold uppercase">Tipo:</h1> */}
+                            {setData({...data,tipo: e.Tipos[0].name})}
                             <h1>{e.Tipos[0].name}</h1>
                         </div>
                         <div>
                             {/* <h1 className="font-bold uppercase">Estructura:</h1> */}
+                            {setData({...data,estructura: e.Estructuras[0].name})}
                             <h1>{e.Estructuras[0].name}</h1>
                         </div>
                         <div>
                             {/* <h1 className="font-bold uppercase">importe:</h1> */}
+                            {setData({...data,importe: e.importe})}
                             <h1>{e.importe}€</h1>
 
                         </div>
                         <div>
                             {/* <h1 className="font-bold uppercase">detalle:</h1> */}
+                            {setData({...data,detalle: e.Detalles[0].name})}
                             <h1>{e.Detalles[0].name}</h1>
                         </div>
                         <div>
                             {/* <h1 className="font-bold uppercase">metodo:</h1> */}
+                            {setData({...data,metodo: e.Metodos[0].name})}
                             <h1>{e.Metodos[0].name ? e.Metodos[0].name : "arreglar"}</h1>
                         </div>
                         <div>
                             {/* <h1 className="font-bold uppercase">responsable:</h1> */}
+                            {setData({...data,responsable: e.Responsables[0].name})}
                             <h1>{e.Responsables[0].name}</h1>
                         </div>
                         <div>
                             {/* <h1 className="font-bold uppercase">Fecha:</h1> */}
+                            {setData({...data,fecha: e.fecha})}
                             <h1>{e.fecha}</h1>
                         </div>
                         <button onClick={() => show(e.id)} className="bg-red-500 duration-300 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">X</button>
