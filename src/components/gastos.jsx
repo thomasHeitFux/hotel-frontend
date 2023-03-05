@@ -57,7 +57,7 @@ export const Gastos = () => {
                         </div>
                         <div>
 
-                            <h1>{e.detalles}</h1>
+                            <h1>{e.detalle}</h1>
                         </div>
                         <div>
                             <h1>{e.metodo}</h1>
