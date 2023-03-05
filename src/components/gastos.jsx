@@ -64,11 +64,11 @@ export const Gastos = () => {
                         </div>
                         <div>
                             <h1 className="font-bold uppercase">metodo:</h1>
-                            <h1>{e.Metodos[0].name}</h1>
+                            <h1>{e.Metodos[0].name?e.Metodos[0].name:"arreglar"}</h1>
                         </div>
                         <div>
                             <h1 className="font-bold uppercase">responsable:</h1>
-                            <h1>{e.Responsables[0] ? e.Responsables[0].name : 'ana'}</h1>
+                            <h1>{e.Responsables[0].name}</h1>
                         </div>
                         <div>
                             <h1 className="font-bold uppercase">Fecha:</h1>
