@@ -25,7 +25,7 @@ export const Gastos = () => {
 
                 dispatch(deleteGastoAction(id))
                 swal({ text: 'El registro se ha eliminado exitosamente!', icon: 'success' })
-                dispatch(getGastosAction());
+                // dispatch(getGastosAction());
             }
         })
     }
