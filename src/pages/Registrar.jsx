@@ -40,7 +40,7 @@ export const Registrar = () => {
             })
         }
     }
-
+    console.log(data);
     return (
         <div>
             <div className="flex justify-center w-full p-10">
