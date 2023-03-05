@@ -40,44 +40,39 @@ export const Gastos = () => {
             <table className="w-full" id="tabla">
 
                 {gastos.gastos.map((e) => {
-
+                    {setData({tipo: e.Tipos[0].name,estructura: e.Estructuras[0].name,importe: e.importe,detalle:e.Detalles[0].name,metodo: e.Metodos[0].name,responsable: e.Responsables[0].name,fecha: e.fecha})}
+                   
+                    
                     return (<tr key={e.id} className="m-3 bg-gray-100 flex p-2 justify-between">
 
 
                         <div className="">
                             {/* <h1 className="font-bold uppercase">Tipo:</h1> */}
-                            {setData({...data,tipo: e.Tipos[0].name})}
                             <h1>{e.Tipos[0].name}</h1>
                         </div>
                         <div>
                             {/* <h1 className="font-bold uppercase">Estructura:</h1> */}
-                            {setData({...data,estructura: e.Estructuras[0].name})}
                             <h1>{e.Estructuras[0].name}</h1>
                         </div>
                         <div>
                             {/* <h1 className="font-bold uppercase">importe:</h1> */}
-                            {setData({...data,importe: e.importe})}
                             <h1>{e.importe}€</h1>
 
                         </div>
                         <div>
                             {/* <h1 className="font-bold uppercase">detalle:</h1> */}
-                            {setData({...data,detalle: e.Detalles[0].name})}
                             <h1>{e.Detalles[0].name}</h1>
                         </div>
                         <div>
                             {/* <h1 className="font-bold uppercase">metodo:</h1> */}
-                            {setData({...data,metodo: e.Metodos[0].name})}
                             <h1>{e.Metodos[0].name ? e.Metodos[0].name : "arreglar"}</h1>
                         </div>
                         <div>
                             {/* <h1 className="font-bold uppercase">responsable:</h1> */}
-                            {setData({...data,responsable: e.Responsables[0].name})}
                             <h1>{e.Responsables[0].name}</h1>
                         </div>
                         <div>
                             {/* <h1 className="font-bold uppercase">Fecha:</h1> */}
-                            {setData({...data,fecha: e.fecha})}
                             <h1>{e.fecha}</h1>
                         </div>
                         <button onClick={() => show(e.id)} className="bg-red-500 duration-300 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">X</button>
