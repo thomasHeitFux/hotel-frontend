@@ -40,8 +40,7 @@ export const Gastos = () => {
             <div className="m-3 uppercase text-black font-bold flex p-2 justify-between"> <h1>tipo</h1><h1>estructura</h1><h1>importe</h1><h1>detalle</h1><h1>metodo</h1><h1>responsable</h1><h1>fecha</h1><button  className="bg-gray-200 text-gray-200 font-bold py-2 px-4 rounded">X</button></div>
             <table className="w-full" id="tabla">
 
-                {gastos.gastos.map((e) => {
-                    setData([...data,{ tipo: e.Tipos[0].name, estructura: e.Estructuras[0].name, importe: e.importe, detalle: e.Detalles[0].name, metodo: e.Metodos[0].name, responsable: e.Responsables[0].name, fecha: e.fecha }])
+                {gastos.map((e) => {
 
 
                     return (<tr key={e.id} className="m-3 bg-gray-100 flex p-2 justify-between">
@@ -49,11 +48,11 @@ export const Gastos = () => {
 
                         <div className="">
                             {/* <h1 className="font-bold uppercase">Tipo:</h1> */}
-                            <h1>{e.Tipos[0].name}</h1>
+                            <h1>{e.tipo}</h1>
                         </div>
                         <div>
                             {/* <h1 className="font-bold uppercase">Estructura:</h1> */}
-                            <h1>{e.Estructuras[0].name}</h1>
+                            <h1>{e.estructura}</h1>
                         </div>
                         <div>
                             {/* <h1 className="font-bold uppercase">importe:</h1> */}
@@ -62,15 +61,15 @@ export const Gastos = () => {
                         </div>
                         <div>
                             {/* <h1 className="font-bold uppercase">detalle:</h1> */}
-                            <h1>{e.Detalles[0].name}</h1>
+                            <h1>{e.detalles}</h1>
                         </div>
                         <div>
                             {/* <h1 className="font-bold uppercase">metodo:</h1> */}
-                            <h1>{e.Metodos[0].name ? e.Metodos[0].name : "arreglar"}</h1>
+                            <h1>{e.metodo}</h1>
                         </div>
                         <div>
                             {/* <h1 className="font-bold uppercase">responsable:</h1> */}
-                            <h1>{e.Responsables[0].name}</h1>
+                            <h1>{e.responsable}</h1>
                         </div>
                         <div>
                             {/* <h1 className="font-bold uppercase">Fecha:</h1> */}
