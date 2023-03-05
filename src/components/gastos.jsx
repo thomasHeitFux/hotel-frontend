@@ -12,7 +12,7 @@ export const Gastos = () => {
 
     useEffect(() => {
         dispatch(getGastosAction());
-    }, [show,dispatch]);
+    }, [dispatch]);
 
     const gastos = useSelector(state => state.gastos);
 
@@ -26,6 +26,7 @@ export const Gastos = () => {
             if (respuesta) {
                 dispatch(deleteGastoAction(id))
                 swal({ text: 'El registro se ha eliminado exitosamente!', icon: 'success' })
+                .then(r=> dispatch(getGastosAction()))
             }
         })
     }
