@@ -37,7 +37,7 @@ export const Gastos = () => {
     return (
         <div className="p-8">
             <button onClick={(e) => handleExport(e)}>Export</button>
-            <div> <h1>tipo</h1><h1>estructura</h1><h1>importe</h1><h1>detalle</h1><h1>metodo</h1><h1>responsable</h1><h1>fecha</h1></div>
+            <div className="m-3 bg-gray-50 flex p-2 justify-between"> <h1>tipo</h1><h1>estructura</h1><h1>importe</h1><h1>detalle</h1><h1>metodo</h1><h1>responsable</h1><h1>fecha</h1></div>
             <table className="w-full" id="tabla">
 
                 {gastos.gastos.map((e) => {
