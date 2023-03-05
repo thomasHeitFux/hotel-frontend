@@ -1,12 +1,22 @@
 import { useEffect } from "react";
 import { getGastosAction } from "../redux/actions/getGastosAction";
 import { useDispatch, useSelector } from "react-redux";
-import ReactHTMLTableToExcel from 'react-html-table-to-excel'
 import swal from "sweetalert";
 import { deleteGastoAction } from "../redux/actions/deleteGastoAction";
+import ExportExcel from 'react-export-excel'
 
 export const Gastos = () => {
+
     const dispatch = useDispatch()
+    const ExcelFile = ExportExcel.ExcelFile;
+    const ExcelSheet = ExportExcel.ExcelSheet;
+    const ExcelColumn = ExportExcel.ExcelColumn;
+
+    const example = [{
+        tipo:"x",estructura:'x',importe:123
+    },{
+        tipo:"x",estructura:'x',importe:1
+    }]
 
     useEffect(() => {
         dispatch(getGastosAction());
@@ -25,19 +35,18 @@ export const Gastos = () => {
 
                 dispatch(deleteGastoAction(id))
                 swal({ text: 'El registro se ha eliminado exitosamente!', icon: 'success' })
-                // dispatch(getGastosAction());
+                dispatch(getGastosAction());
             }
         })
     }
     return (
         <div className="p-8">
-            <ReactHTMLTableToExcel
-                id="test-table-xls-button"
-                className="download-table-xls-button"
-                table="tabla"
-                filename="tablexls"
-                sheet="tablexls"
-                buttonText="Exportar a excel" />
+            <ExcelFile element={<button>Exportar a excel</button>} fileName="test">
+                <ExcelSheet data={example} name="test"></ExcelSheet>
+                <ExcelColumn label="tipo" value="tipo"></ExcelColumn>
+                <ExcelColumn label="estructura" value="estructura"></ExcelColumn>
+                <ExcelColumn label="importe" value="importe"></ExcelColumn>
+            </ExcelFile>
             <table className="w-full" id="tabla">
 
                 {gastos.gastos.map((e) => {
@@ -64,7 +73,7 @@ export const Gastos = () => {
                         </div>
                         <div>
                             {/* <h1 className="font-bold uppercase">metodo:</h1> */}
-                            <h1>{e.Metodos[0].name?e.Metodos[0].name:"arreglar"}</h1>
+                            <h1>{e.Metodos[0].name ? e.Metodos[0].name : "arreglar"}</h1>
                         </div>
                         <div>
                             {/* <h1 className="font-bold uppercase">responsable:</h1> */}
