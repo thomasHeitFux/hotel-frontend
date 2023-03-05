@@ -32,11 +32,11 @@ export const Gastos = () => {
         })
     }
     const handleExport = ()=>{
-        console.log();
+        console.log(data);
     }
     return (
         <div className="p-8">
-           <button onClick={handleExport}>Export</button>
+           <button onClick={()=>handleExport()}>Export</button>
             <table className="w-full" id="tabla">
 
                 {gastos.gastos.map((e) => {
