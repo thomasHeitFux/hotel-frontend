@@ -15,7 +15,7 @@ export const Registrar = () => {
     const responsable = ["Ana Vasquez Castillo", "Grabiel Nuñez", "Otros"]
 
     const [data, setData] = useState({
-        importe: null, fecha: null, metodo: null, tipo: null, detalle: null, estructura: null, responsable: null
+        importe: null, fecha: null, metodo: metodos[0], tipo: tipos[0], detalle: "", estructura: estructuras[0], responsable: responsable[0]
     });
 
 
@@ -36,7 +36,7 @@ export const Registrar = () => {
             swal({ text: 'El registro se ha creado exitosamente!', icon: 'success' })
             dispatch(sendDataAction(data))
             setData({
-                importe: null, fecha: null, metodo: null, tipo: null, detalle: null, estructura: null, responsable: null
+                importe: null, fecha: null, metodo: metodos[0], tipo: tipos[0], detalle: "", estructura: estructuras[0], responsable: responsable[0]
             })
         }
     }
@@ -63,7 +63,6 @@ export const Registrar = () => {
                         <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                             <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="">Tipo</label>
                             <select onChange={(e) => handleChange(e)} className="appearance-none block w-full cursor-pointer bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" name="tipo" id="">
-                                <option value="otro">...</option>
                                 {tipos.map((t) => (
                                     <option key={t} value={t}>{t}</option>
                                 ))}
@@ -73,7 +72,6 @@ export const Registrar = () => {
                         <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                             <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="">Metodo</label>
                             <select  onChange={(e) => handleChange(e)} className="cursor-pointer appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" name="metodo" id="">
-                                <option value="otro">...</option>
                                 {metodos.map((m) => (
                                     <option value={m}>{m}</option>
                                 ))}
@@ -91,7 +89,6 @@ export const Registrar = () => {
                         <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                             <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="">Estructura</label>
                             <select onChange={(e) => handleChange(e)} className="appearance-none block w-full bg-gray-200 cursor-pointer text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" name="estructura" id="">
-                                <option value="otro">...</option>
                                 {estructuras.map((e) => (
                                     <option value={e}>{e}</option>
                                 ))}
