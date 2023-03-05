@@ -3,20 +3,12 @@ import { getGastosAction } from "../redux/actions/getGastosAction";
 import { useDispatch, useSelector } from "react-redux";
 import swal from "sweetalert";
 import { deleteGastoAction } from "../redux/actions/deleteGastoAction";
-import ExportExcel from 'react-export-excel'
+
 
 export const Gastos = () => {
 
     const dispatch = useDispatch()
-    const ExcelFile = ExportExcel.ExcelFile;
-    const ExcelSheet = ExportExcel.ExcelSheet;
-    const ExcelColumn = ExportExcel.ExcelColumn;
-
-    const example = [{
-        tipo:"x",estructura:'x',importe:123
-    },{
-        tipo:"x",estructura:'x',importe:1
-    }]
+   
 
     useEffect(() => {
         dispatch(getGastosAction());
@@ -41,12 +33,7 @@ export const Gastos = () => {
     }
     return (
         <div className="p-8">
-            <ExcelFile element={<button>Exportar a excel</button>} fileName="test">
-                <ExcelSheet data={example} name="test"></ExcelSheet>
-                <ExcelColumn label="tipo" value="tipo"></ExcelColumn>
-                <ExcelColumn label="estructura" value="estructura"></ExcelColumn>
-                <ExcelColumn label="importe" value="importe"></ExcelColumn>
-            </ExcelFile>
+           
             <table className="w-full" id="tabla">
 
                 {gastos.gastos.map((e) => {
