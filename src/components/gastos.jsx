@@ -63,7 +63,7 @@ export const Gastos = () => {
                         </div>
                         <div>
 
-                            <h1>{formatNumber(e.importe)}€</h1>
+                            <h1>{formatNumber(e.importe)}</h1>
 
                         </div>
                         <div>
