@@ -35,9 +35,9 @@ export const Registrar = () => {
         else {
             swal({ text: 'El registro se ha creado exitosamente!', icon: 'success' })
             dispatch(sendDataAction(data))
-            setData({
-                importe: null, fecha: null, metodo: metodos[0], tipo: tipos[0], detalle: "", estructura: estructuras[0], responsable: responsable[0]
-            })
+            // setData({
+            //     importe: null, fecha: null, metodo: metodos[0], tipo: tipos[0], detalle: "", estructura: estructuras[0], responsable: responsable[0]
+            // })
         }
     }
     console.log(data);
