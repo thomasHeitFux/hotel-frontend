@@ -71,7 +71,7 @@ export const Registrar = () => {
 
                         <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                             <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="">Metodo</label>
-                            <select  onChange={(e) => handleChange(e)} className="cursor-pointer appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" name="metodo" id="">
+                            <select onChange={(e) => handleChange(e)} className="cursor-pointer appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" name="metodo" id="">
                                 {metodos.map((m) => (
                                     <option value={m}>{m}</option>
                                 ))}
@@ -98,9 +98,9 @@ export const Registrar = () => {
 
                     <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="">Responsable</label>
                     <select onChange={(e) => handleChange(e)} className="cursor-pointer appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" name="responsable" id="">
-                    {responsable.map((e) => (
-                                    <option value={e}>{e}</option>
-                                ))}
+                        {responsable.map((e) => (
+                            <option value={e}>{e}</option>
+                        ))}
                     </select>
                     <section className="flex justify-end">
 

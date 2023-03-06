@@ -31,7 +31,7 @@ export const Gastos = () => {
         })
     }
     const handleExport = () => {
-        console.log(data);
+        console.log(gastos.gastos);
     }
     return (
         <div className="p-8">
