@@ -38,10 +38,11 @@ export const Gastos = () => {
         writeFile(wb,"MyExcel.xlsx")
     }
     function formatNumber (number){
-        return number.toLocalString('es-ES',{
+        let res = number.toLocalString('es-ES',{
             style:'currency',
             currency:'EUR'
         })
+        return res
     }
     return (
         <div className="p-8">
