@@ -37,7 +37,7 @@ export const Gastos = () => {
         utils.book_append_sheet(wb,ws,"gastos");
         writeFile(wb,"MyExcel.xlsx")
     }
-    const formatNumber = (number)=>{
+    function formatNumber (number){
         return number.toLocalString('es-ES',{
             style:'currency',
             currency:'EUR'
