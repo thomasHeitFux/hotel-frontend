@@ -104,7 +104,7 @@ export const Registrar = () => {
                     </select>
                     <section className="flex justify-end">
 
-                        <input onClick={(e) => { handleSend() }} className="duration-300 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer" type="button" value="Send" />
+                        <input onClick={(e) => { handleSend() }} className="duration-300 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer" type="button" value="Crear" />
                     </section>
                 </form>
             </div>
