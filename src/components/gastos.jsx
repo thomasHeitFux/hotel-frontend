@@ -58,7 +58,7 @@ export const Gastos = () => {
                         </div>
                         <div>
 
-                            <h1>{e.importe.toLocalString('es-ES',{
+                            <h1>{e.importe.toLocaleString('es-ES',{
                                 style:'currency',currency:'EUR'
                             })}</h1>
 
