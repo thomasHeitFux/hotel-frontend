@@ -3,7 +3,7 @@ import { getGastosAction } from "../redux/actions/getGastosAction";
 import { useDispatch, useSelector } from "react-redux";
 import swal from "sweetalert";
 import { deleteGastoAction } from "../redux/actions/deleteGastoAction";
-import XLSX from 'xlsx'
+import { utils,writeFile } from "xlsx";
 
 
 export const Gastos = () => {
@@ -32,10 +32,10 @@ export const Gastos = () => {
         })
     }
     const handleExport = () => {
-        let wb =XLSX.utils.book_new(),
-        ws=XLSX.utils.json_to_sheet(gastos.gastos);
-        XLSX.utils.book_append_sheet(wb,ws,"gastos");
-        XLSX.writeFile(wb,"MyExcel.xlsx")
+        let wb =utils.book_new(),
+        ws=utils.json_to_sheet(gastos.gastos);
+        utils.book_append_sheet(wb,ws,"gastos");
+        writeFile(wb,"MyExcel.xlsx")
     }
     return (
         <div className="p-8">
