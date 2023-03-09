@@ -10,7 +10,7 @@ const responsable = ["Ana Vasquez Castillo", "Grabiel Nuñez", "Otros"]
 
 
 export const EditForm = ({ active }) => {
-
+    console.log(active);
     const dispatch = useDispatch();
 
     const [data, setData] = useState({
