@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import swal from "sweetalert";
 import { deleteGastoAction } from "../redux/actions/deleteGastoAction";
 import { utils,writeFile } from "xlsx";
+import { EditForm } from "./EditForm";
 
 
 export const Gastos = () => {
@@ -41,6 +42,9 @@ export const Gastos = () => {
 
     const edit = (e) =>{
         console.log(e);
+        return(
+            <EditForm/>
+        )
     }
    
     return (
