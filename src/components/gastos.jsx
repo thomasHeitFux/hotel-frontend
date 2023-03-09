@@ -52,7 +52,7 @@ export const Gastos = () => {
                 {gastos.gastos.map((e) => {
 
 
-                    return (<tr key={e.id} className="m-3 align-middle bg-gray-100 flex p-2 justify-between">
+                    return (<tr key={e.id} className="m-3 items-center bg-gray-100 flex p-2 justify-between">
 
 
                         <div className="">
@@ -81,7 +81,7 @@ export const Gastos = () => {
                         <div>
                             <h1>{e.fecha}</h1>
                         </div>
-                        <div>
+                        <div className="mr-1">
                         <button onClick={() => edit(e)} className="bg-blue-500 duration-300 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">E</button>
                         <button onClick={() => show(e.id)} className="bg-red-500 duration-300 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">X</button>
                         </div>
