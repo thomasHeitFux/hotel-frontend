@@ -3,12 +3,12 @@ import { getGastosAction } from "../redux/actions/getGastosAction";
 import { useDispatch, useSelector } from "react-redux";
 import swal from "sweetalert";
 import { deleteGastoAction } from "../redux/actions/deleteGastoAction";
-import { utils,writeFile } from "xlsx";
+import { utils, writeFile } from "xlsx";
 import { EditForm } from "./EditForm";
 
 
 export const Gastos = () => {
-    const [data, setData] = useState([])
+    const [active, setActive] = useState(false)
     const dispatch = useDispatch()
 
 
@@ -28,27 +28,26 @@ export const Gastos = () => {
             if (respuesta) {
                 dispatch(deleteGastoAction(id))
                 swal({ text: 'El registro se ha eliminado exitosamente!', icon: 'success' })
-                .then(r=> dispatch(getGastosAction()))
+                    .then(r => dispatch(getGastosAction()))
             }
         })
     }
 
     const handleExport = () => {
-        let wb =utils.book_new(),
-        ws=utils.json_to_sheet(gastos.gastos);
-        utils.book_append_sheet(wb,ws,"gastos");
-        writeFile(wb,"MyExcel.xlsx")
+        let wb = utils.book_new(),
+            ws = utils.json_to_sheet(gastos.gastos);
+        utils.book_append_sheet(wb, ws, "gastos");
+        writeFile(wb, "MyExcel.xlsx")
     }
 
-    const edit = (e) =>{
+    const edit = (e) => {
         console.log(e);
-        return(
-            <EditForm/>
-        )
+        setActive(true)
     }
-   
+
     return (
         <div className="p-8">
+            <EditForm active={active} />
             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={(e) => handleExport(e)}>Exportar</button>
             <div className="m-3 uppercase text-black font-bold flex p-2 justify-between"> <h1>tipo</h1><h1>estructura</h1><h1>importe</h1><h1>detalle</h1><h1>metodo</h1><h1>responsable</h1><h1>fecha</h1><button className="bg-gray-200 text-gray-200 font-bold py-2 px-4 rounded">X</button></div>
             <table className="w-full" id="tabla">
@@ -67,8 +66,8 @@ export const Gastos = () => {
                         </div>
                         <div>
 
-                            <h1>{e.importe.toLocaleString('es-ES',{
-                                style:'currency',currency:'EUR'
+                            <h1>{e.importe.toLocaleString('es-ES', {
+                                style: 'currency', currency: 'EUR'
                             })}</h1>
 
                         </div>
@@ -86,8 +85,8 @@ export const Gastos = () => {
                             <h1>{e.fecha}</h1>
                         </div>
                         <div className="flex justify-between">
-                        <button onClick={() => edit(e)} className="bg-blue-500 duration-300 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">E</button>
-                        <button onClick={() => show(e.id)} className="bg-red-500 duration-300 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">X</button>
+                            <button onClick={() => edit(e)} className="bg-blue-500 duration-300 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">E</button>
+                            <button onClick={() => show(e.id)} className="bg-red-500 duration-300 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">X</button>
                         </div>
                     </tr>
                     )
