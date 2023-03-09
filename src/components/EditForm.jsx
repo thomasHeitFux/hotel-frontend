@@ -9,12 +9,12 @@ const metodos = ["Cash", "Bonifico", "Carta", "PayPal", "Revoult"]
 const responsable = ["Ana Vasquez Castillo", "Grabiel Nuñez", "Otros"]
 
 
-export const EditForm = ({ active }) => {
-    console.log(active);
+export const EditForm = ({ active,e }) => {
+    console.log(e);
     const dispatch = useDispatch();
 
     const [data, setData] = useState({
-        importe: null, fecha: null, metodo: metodos[0], tipo: tipos[0], detalle: "", estructura: estructuras[0], responsable: responsable[0]
+        importe: e.importe, fecha: e.fecha, metodo: e.metodo, tipo: e.tipos, detalle: e.detalle, estructura: e.estructura, responsable: e.responsable
     });
 
 
