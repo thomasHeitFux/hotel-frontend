@@ -13,9 +13,9 @@ export const EditForm = ({ active,e }) => {
     console.log(e);
     const dispatch = useDispatch();
 
-    // const [data, setData] = useState({
-    //     importe: e.importe, fecha: e.fecha, metodo: e.metodo, tipo: e.tipos, detalle: e.detalle, estructura: e.estructura, responsable: e.responsable
-    // });
+    const [data, setData] = useState({
+        // importe: e.importe, fecha: e.fecha, metodo: e.metodo, tipo: e.tipos, detalle: e.detalle, estructura: e.estructura, responsable: e.responsable
+    });
 
 
     function handleChange(e) {
