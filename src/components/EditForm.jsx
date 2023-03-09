@@ -13,9 +13,9 @@ export const EditForm = ({ active,e }) => {
     console.log(e);
     const dispatch = useDispatch();
 
-    const [data, setData] = useState({
-        importe: e.importe, fecha: e.fecha, metodo: e.metodo, tipo: e.tipos, detalle: e.detalle, estructura: e.estructura, responsable: e.responsable
-    });
+    // const [data, setData] = useState({
+    //     importe: e.importe, fecha: e.fecha, metodo: e.metodo, tipo: e.tipos, detalle: e.detalle, estructura: e.estructura, responsable: e.responsable
+    // });
 
 
     function handleChange(e) {
@@ -40,7 +40,7 @@ export const EditForm = ({ active,e }) => {
         {active &&
             <div  className=" flex justify-between gap-1 p-4 items-center  ">
                     <div className="">
-                    <select onChange={(e) => handleChange(e)} className="" name="tipo" id="">
+                    <select defaultValue={e.tipo} onChange={(e) => handleChange(e)} className="" name="tipo" id="">
                         {tipos.map((t) => (
                             <option key={t} value={t}>{t}</option>
                         ))}
