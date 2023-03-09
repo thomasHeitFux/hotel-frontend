@@ -91,9 +91,9 @@ export const Gastos = () => {
                     </tr>
                     )
                 })}
+            <EditForm active={active} e={e} />
 
             </table>
-            <EditForm active={active} e={e} />
         </div>
     )
 }
