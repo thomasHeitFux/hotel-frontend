@@ -62,7 +62,7 @@ export const Gastos = () => {
                         <div className="">
                             <h1>{e.tipo}</h1>
                         </div>
-                        <div className="w-48">
+                        <div className="w-40">
                             <h1 className="overflow-hidden">{e.estructura}</h1>
                         </div>
                         <div>
