@@ -56,7 +56,7 @@ export const Gastos = () => {
                 {gastos.gastos.map((e) => {
 
 
-                    return (<tr key={e.id} className="m-3 items-center bg-gray-100 flex p-2 justify-between">
+                    return (<tr key={e.id} className="m-3 items-center bg-gray-100 flex p-2 gap-4">
 
 
                         <div className="">
