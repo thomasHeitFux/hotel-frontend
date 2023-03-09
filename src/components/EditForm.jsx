@@ -36,75 +36,53 @@ export const EditForm = ({ active }) => {
         }
     }
 
-   return ( <>
-        {active&&
-            <div className=" flex justify-center">
-        <form className=" bg-gray-50 shadow-md rounded px-8 pt-6 pb-8 mb-4 w-1/2  " action="">
-
-            <div className="flex flex-wrap -mx-3 mb-2">
-
-                <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="">Fecha</label>
-                    <input onChange={(e) => handleChange(e)} className="w-full appearance-none block  bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" name="fecha" type="date" />
-                </div>
-
-                <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="">importe</label>
-                    <input onChange={(e) => handleChange(e)} className="w-full appearance-none block bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" name="importe" type="number" />
-                </div>
-            </div>
-
-            <div className="flex flex-wrap -mx-3 mb-2">
-                <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="">Tipo</label>
-                    <select onChange={(e) => handleChange(e)} className="appearance-none block w-full cursor-pointer bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" name="tipo" id="">
+    return (<>
+        {active &&
+            <div  className=" flex justify-between gap-1 p-4 items-center  ">
+                    <div className="">
+                    <select onChange={(e) => handleChange(e)} className="" name="tipo" id="">
                         {tipos.map((t) => (
                             <option key={t} value={t}>{t}</option>
                         ))}
                     </select>
                 </div>
+                <div className="">
 
-                <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="">Metodo</label>
-                    <select onChange={(e) => handleChange(e)} className="cursor-pointer appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" name="metodo" id="">
-                        {metodos.map((m) => (
-                            <option value={m}>{m}</option>
-                        ))}
-                    </select>
-                </div>
-            </div>
-
-            <div className="flex flex-wrap -mx-3 mb-2">
-                <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="">Detalle</label>
-                    <input type="text" onChange={(e) => handleChange(e)} className="cursor-pointer appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" name="detalle" id="">
-                    </input>
-                </div>
-
-                <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="">Estructura</label>
-                    <select onChange={(e) => handleChange(e)} className="appearance-none block w-full bg-gray-200 cursor-pointer text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" name="estructura" id="">
+                    <select onChange={(e) => handleChange(e)} className="" name="estructura" id="">
                         {estructuras.map((e) => (
                             <option value={e}>{e}</option>
                         ))}
                     </select>
                 </div>
+                <div className="">
+
+                    <input onChange={(e) => handleChange(e)} className="" name="importe" type="number" />
+                </div>
+                <div className="">
+                    <input type="text" onChange={(e) => handleChange(e)} className="" name="detalle" id="">
+                    </input>
+                </div>
+                <div className="">
+
+                    <select onChange={(e) => handleChange(e)} className="" name="metodo" id="">
+                        {metodos.map((m) => (
+                            <option value={m}>{m}</option>
+                        ))}
+                    </select>
+                </div>
+                <select onChange={(e) => handleChange(e)} className="" name="responsable" id="">
+                    {responsable.map((e) => (
+                        <option value={e}>{e}</option>
+                    ))}
+                </select>
+                <div className="">
+                    <input onChange={(e) => handleChange(e)} className=" " name="fecha" type="date" />
+                </div>
+                <input onClick={(e) => { console.log('hola'); }} className="" type="button" value="N" />
+
+                <input onClick={(e) => { console.log('hola'); }} className="" type="button" value="Y" />
             </div>
-
-            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="">Responsable</label>
-            <select onChange={(e) => handleChange(e)} className="cursor-pointer appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" name="responsable" id="">
-                {responsable.map((e) => (
-                    <option value={e}>{e}</option>
-                ))}
-            </select>
-            <section className="flex justify-end">
-
-                <input onClick={(e) => { handleSend() }} className="duration-300 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer" type="button" value="Crear" />
-            </section>
-        </form>
-
-        </div>
-}
+        }
     </>
-   )
+    )
 }

@@ -9,6 +9,7 @@ import { EditForm } from "./EditForm";
 
 export const Gastos = () => {
     const [active, setActive] = useState(false)
+    const [e, setE] = useState()
     const dispatch = useDispatch()
 
 
@@ -40,10 +41,10 @@ export const Gastos = () => {
         writeFile(wb, "MyExcel.xlsx")
     }
 
-    const edit = () => {
-        console.log('halo');
-        setActive(true)
-        console.log(active);
+    const edit = (e) => {
+        console.log(e);
+        setE(e)
+        setActive(!active)
     }
 
     return (
@@ -84,7 +85,7 @@ export const Gastos = () => {
                         <div>
                             <h1>{e.fecha}</h1>
                         </div>
-                        <button onClick={() => edit()} className="bg-blue-500 duration-300 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">E</button>
+                            <button onClick={() => edit(e)} className="bg-blue-500 duration-300 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">E</button>
                             <button onClick={() => show(e.id)} className="bg-red-500 duration-300 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">X</button>
                 
                     </tr>
@@ -92,7 +93,7 @@ export const Gastos = () => {
                 })}
 
             </table>
-            <EditForm active={active} />
+            <EditForm active={active} e={e} />
         </div>
     )
 }
