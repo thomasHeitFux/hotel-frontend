@@ -37,7 +37,7 @@ export const EditForm = ({ active }) => {
     }
 
    return ( <>
-        active&&<form className="bg-gray-50 shadow-md rounded px-8 pt-6 pb-8 mb-4 w-1/2  " action="">
+        {active&&<form className="bg-gray-50 shadow-md rounded px-8 pt-6 pb-8 mb-4 w-1/2  " action="">
 
             <div className="flex flex-wrap -mx-3 mb-2">
 
@@ -100,7 +100,7 @@ export const EditForm = ({ active }) => {
                 <input onClick={(e) => { handleSend() }} className="duration-300 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer" type="button" value="Crear" />
             </section>
         </form>
-
+}
     </>
    )
 }
