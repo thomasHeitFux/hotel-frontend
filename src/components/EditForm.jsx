@@ -13,9 +13,7 @@ export const EditForm = ({ active,e }) => {
     console.log(e);
     const dispatch = useDispatch();
 
-    const [data, setData] = useState({
-        // importe: e.importe, fecha: e.fecha, metodo: e.metodo, tipo: e.tipos, detalle: e.detalle, estructura: e.estructura, responsable: e.responsable
-    });
+    const [data, setData] = useState(e);
 
 
     function handleChange(e) {
@@ -48,7 +46,7 @@ export const EditForm = ({ active,e }) => {
                 </div>
                 <div className="">
 
-                    <select onChange={(e) => handleChange(e)} className="" name="estructura" id="">
+                    <select defaultValue={e.estructura} onChange={(e) => handleChange(e)} className="" name="estructura" id="">
                         {estructuras.map((e) => (
                             <option value={e}>{e}</option>
                         ))}
@@ -56,27 +54,27 @@ export const EditForm = ({ active,e }) => {
                 </div>
                 <div className="">
 
-                    <input onChange={(e) => handleChange(e)} className="" name="importe" type="number" />
+                    <input defaultValue={e.importe} onChange={(e) => handleChange(e)} className="" name="importe" type="number" />
                 </div>
                 <div className="">
-                    <input type="text" onChange={(e) => handleChange(e)} className="" name="detalle" id="">
+                    <input type="text" defaultValue={e.detalle} onChange={(e) => handleChange(e)} className="" name="detalle" id="">
                     </input>
                 </div>
                 <div className="">
 
-                    <select onChange={(e) => handleChange(e)} className="" name="metodo" id="">
+                    <select defaultValue={e.metodo} onChange={(e) => handleChange(e)} className="" name="metodo" id="">
                         {metodos.map((m) => (
                             <option value={m}>{m}</option>
                         ))}
                     </select>
                 </div>
-                <select onChange={(e) => handleChange(e)} className="" name="responsable" id="">
+                <select defaultValue={e.responsable} onChange={(e) => handleChange(e)} className="" name="responsable" id="">
                     {responsable.map((e) => (
                         <option value={e}>{e}</option>
                     ))}
                 </select>
                 <div className="">
-                    <input onChange={(e) => handleChange(e)} className=" " name="fecha" type="date" />
+                    <input defaultValue={e.fecha} onChange={(e) => handleChange(e)} className=" " name="fecha" type="date" />
                 </div>
                 <input onClick={(e) => { console.log('hola'); }} className="" type="button" value="N" />
 
