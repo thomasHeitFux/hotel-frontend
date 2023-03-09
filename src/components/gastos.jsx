@@ -81,7 +81,7 @@ export const Gastos = () => {
                         <div>
                             <h1>{e.fecha}</h1>
                         </div>
-                        <div className="mr-1">
+                        <div className="ml-3">
                         <button onClick={() => edit(e)} className="bg-blue-500 duration-300 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">E</button>
                         <button onClick={() => show(e.id)} className="bg-red-500 duration-300 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">X</button>
                         </div>
