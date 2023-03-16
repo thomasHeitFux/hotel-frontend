@@ -36,7 +36,7 @@ export const EditForm = ({ active,e, toggle}) => {
 
     return (<>
         {active &&
-            <div  className=" flex justify-between gap-1 items-center p-12 backdrop-blur-sm transition duration-150 ease-in-out z-10 fixed top-0 right-0 bottom-0 left-0">
+            <div  className="bg-gray-50 shadow-md rounded px-8 pt-6 pb-8 mb-4 w-1/2  flex justify-between gap-1 items-center p-12 backdrop-blur-sm transition duration-150 ease-in-out z-10 fixed top-0 right-0 bottom-0 left-0">
                     <div className="">
                     <select defaultValue={e.tipo} onChange={(e) => handleChange(e)} className="" name="tipo" id="">
                         {tipos.map((t) => (
