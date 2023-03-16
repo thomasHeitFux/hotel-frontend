@@ -42,7 +42,6 @@ export const Gastos = () => {
     }
 
     const edit = (e) => {
-        console.log(e);
         setE(e)
         setActive(!active)
     }

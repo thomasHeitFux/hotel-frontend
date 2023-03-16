@@ -35,15 +35,12 @@ export const Registrar = () => {
         else {
             swal({ text: 'El registro se ha creado exitosamente!', icon: 'success' })
             dispatch(sendDataAction(data))
-            // setData({
-            //     importe: null, fecha: null, metodo: metodos[0], tipo: tipos[0], detalle: "", estructura: estructuras[0], responsable: responsable[0]
-            // })
         }
     }
     return (
         <div>
             <div className="flex justify-center w-full p-10">
-                <form className="bg-gray-50 shadow-md rounded px-8 pt-6 pb-8 mb-4 w-1/2  " action="">
+                <form className="bg-gray-100 shadow-md rounded px-8 pt-6 pb-8 mb-4 w-1/2  " action="">
 
                     <div className="flex flex-wrap -mx-3 mb-2">
 
