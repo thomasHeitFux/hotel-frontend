@@ -42,7 +42,7 @@ export const Register = ({activeRegister, toggleRegister}) => {
     }
     return (<>{
         activeRegister &&
-        <div className="backdrop-blur-sm transition duration-150 ease-in-out z-10 fixed top-0 right-0 bottom-0 left-0">
+        <div className="backdrop-blur-lg transition duration-150 ease-in-out z-10 fixed top-0 right-0 bottom-0 left-0">
             <div className="flex justify-center w-full p-10 ">
                 <form className="bg-gray-100 shadow-md rounded px-8 pt-6 pb-8 mb-4 w-1/2  " action="">
 
