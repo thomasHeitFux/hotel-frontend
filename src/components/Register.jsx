@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch } from 'react-redux';
 import { sendDataAction } from "../redux/actions/sendDataAction";
 import swal from "sweetalert";
+import { getGastosAction } from "../redux/actions/getGastosAction";
 
 export const Register = ({activeRegister, toggleRegister}) => {
 
@@ -33,8 +34,10 @@ export const Register = ({activeRegister, toggleRegister}) => {
             swal({ text: 'Necesitas rellenar todos los campos', icon: "error" })
         }
         else {
-            swal({ text: 'El registro se ha creado exitosamente!', icon: 'success' })
             dispatch(sendDataAction(data))
+            swal({ text: 'El registro se ha creado exitosamente!', icon: 'success' })
+            .then(r => dispatch(getGastosAction()))
+            toggleRegister()
         }
     }
     return (<>{
@@ -101,7 +104,7 @@ export const Register = ({activeRegister, toggleRegister}) => {
                     </select>
                     <section className="flex justify-end gap-4 pt-4">
                     <input onClick={(e) => { toggleRegister() }} className="duration-300 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded cursor-pointer" type="button" value="Cancelar" />
-                        <input onClick={(e) => { handleSend() }} className="duration-300 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer" type="button" value="Crear" />
+                        <input onClick={(e) => { handleSend() }} className="duration-300 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded cursor-pointer" type="button" value="Crear" />
                     </section>
                 </form>
             </div>
