@@ -52,7 +52,7 @@ export const Gastos = () => {
 
     return (
         <div className="p-8">
-           <section className="flex justify-between">
+           <section className="flex justify-between m-3">
            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={(e) => handleExport(e)}>Exportar</button>
             <button onClick={()=>setActiveRegister(!activeRegister)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" >Registrar</button>
            </section>
