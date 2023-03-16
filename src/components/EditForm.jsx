@@ -9,7 +9,7 @@ const metodos = ["Cash", "Bonifico", "Carta", "PayPal", "Revoult"]
 const responsable = ["Ana Vasquez Castillo", "Grabiel Nuñez", "Otros"]
 
 
-export const EditForm = ({ active,e }) => {
+export const EditForm = ({ active,e, toggle}) => {
     console.log(e);
     const dispatch = useDispatch();
 
@@ -77,8 +77,8 @@ export const EditForm = ({ active,e }) => {
                     <input defaultValue={e.fecha} onChange={(e) => handleChange(e)} className=" " name="fecha" type="date" />
                 </div>
                 <input onClick={(e) => { console.log('hola'); }} className="" type="button" value="N" />
-
                 <input onClick={(e) => { console.log('hola'); }} className="" type="button" value="Y" />
+                <button className="bg-red-500 duration-300 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" onClick={toggle}>X</button>
             </div>
         }
     </>

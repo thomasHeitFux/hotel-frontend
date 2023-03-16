@@ -11,7 +11,7 @@ export const Gastos = () => {
     const [active, setActive] = useState(false)
     const [e, setE] = useState()
     const dispatch = useDispatch()
-
+    const toggle = () => setActive(!active);
 
     useEffect(() => {
         dispatch(getGastosAction());
@@ -95,7 +95,7 @@ export const Gastos = () => {
                 })}
 
             </table>
-                <EditForm active={active} e={e} />
+                <EditForm active={active} toggle={toggle} e={e} />
         </div>
     )
 }
