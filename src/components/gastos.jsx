@@ -7,6 +7,7 @@ import { utils, writeFile } from "xlsx";
 import { EditForm } from "./EditForm";
 import { Register } from "./Register";
 import {AiOutlineEdit,AiOutlineDelete} from 'react-icons/ai' 
+import { filterGastos } from "../redux/actions/filterGastos";
 
 
 export const Gastos = () => {
@@ -53,7 +54,7 @@ export const Gastos = () => {
     }
     const sendFilter=()=>{
         toggleFilter()
-        dispatch(filterGasto(filter))
+        dispatch(filterGastos(filter))
     }
 
     return (
