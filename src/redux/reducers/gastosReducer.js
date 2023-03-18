@@ -44,7 +44,7 @@ import {
         };
       case FILTER_SUCCESS:
         console.log(state.gastos);
-        const ordered = payload === false ? state.gastos.sort(function (a, b) {
+        const ordered = payload? state.gastos.sort(function (a, b) {
             if (a.importe > b.importe) return 1;
             if (a.importe < b.importe) return -1;
             else return 0;
