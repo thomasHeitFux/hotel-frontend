@@ -54,6 +54,7 @@ export const Gastos = () => {
         setActive(!active)
     }
     const sendFilter=()=>{
+        console.log(filter);
         toggleFilter()
         dispatch(filterGastos(filter))
         // dispatch(getGastosAction())
