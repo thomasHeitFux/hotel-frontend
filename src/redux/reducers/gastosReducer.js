@@ -22,6 +22,7 @@ import {
           ...state,
           isLoading: true,
           gastos: [],
+          filtered: [],
         };
       case GET_GASTOS_SUCCESS:
         return {

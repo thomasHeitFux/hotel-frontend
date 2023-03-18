@@ -18,7 +18,7 @@ export const Gastos = () => {
     const [activeRegister, setActiveRegister] = useState(false)
     const toggleRegister = () => setActiveRegister(!activeRegister);
     const [filter, setFilter] = useState(false)
-    const toggleFilter = () => {setActive(!filter)};
+    const toggleFilter = () => {setFilter(!filter)};
 
     useEffect(() => {
         dispatch(getGastosAction());
@@ -64,7 +64,7 @@ export const Gastos = () => {
            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={(e) => handleExport(e)}>Exportar</button>
             <button onClick={()=>setActiveRegister(!activeRegister)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" >Registrar</button>
            </section>
-            <div className="m-3 uppercase text-black font-bold flex p-2 justify-between"> <button onClick={()=>{sendFilter()}}>tipo</button><h1>estructura</h1><h1>importe</h1><h1>detalle</h1><h1>metodo</h1><h1>responsable</h1><h1>fecha</h1><button className="bg-gray-200 text-gray-200 font-bold py-2 px-4 rounded">X</button></div>
+            <div className="m-3 uppercase text-black font-bold flex p-2 justify-between"> <h1>tipo</h1><h1>estructura</h1><button onClick={()=>{sendFilter()}}>importe</button><h1>detalle</h1><h1>metodo</h1><h1>responsable</h1><h1>fecha</h1><button className="bg-gray-200 text-gray-200 font-bold py-2 px-4 rounded">X</button></div>
             <table className="w-full" id="tabla">
 
                 {gastos.gastos.map((e) => {
