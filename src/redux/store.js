@@ -12,7 +12,7 @@ const rootReducer = combineReducers({
   estructuras: estructurasReducer,
   detalles: detallesReducer,
   gastos:gastosReducer,
-  filtered:filterReducer
+  filtered:gastosReducer
 });
 
 export const store = createStore(rootReducer, applyMiddleware(thunk));

@@ -36,14 +36,6 @@ import {
           ...state,
           isLoading: false,
         };
-      default:
-        return { ...state };
-    }
-  };
-
-
-  export const filterReducer = (state = initialState, { type, payload }) => {
-    switch (type) {
       case  FILTER_PENDING:
         return {
           ...state,
@@ -74,5 +66,4 @@ import {
         };
       default:
         return { ...state };
-    }
-  };
+    }}
