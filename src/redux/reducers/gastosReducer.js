@@ -47,11 +47,11 @@ import {
         return {
           ...state,
           isLoading: true,
-          filtered: state.gastos,
+          filtered: initialState.gastos,
         };
       case FILTER_SUCCESS:
-
-        const ordered = payload === false ? state.gastos.sort(function (a, b) {
+        console.log(initialState.gastos);
+        const ordered = payload === false ? initialState.gastos.sort(function (a, b) {
             if (a.importe > b.importe) return 1;
             if (a.importe < b.importe) return -1;
             else return 0;

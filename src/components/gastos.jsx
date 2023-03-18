@@ -57,7 +57,7 @@ export const Gastos = () => {
         toggleFilter()
         dispatch(filterGastos(filter))
     }
-    console.log(filtered);
+   
     return (
         <div className="p-8">
            <section className="flex justify-between m-3">
