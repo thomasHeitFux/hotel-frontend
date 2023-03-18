@@ -7,7 +7,7 @@ import {
 
 
 export const filterGastos = (payload) => {
-    return async function () {
+    return async function (dispatch) {
       dispatch({ type: FILTER_PENDING });
       try {
         return dispatch({
