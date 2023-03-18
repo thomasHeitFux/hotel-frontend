@@ -36,15 +36,10 @@ import {
           ...state,
           isLoading: false,
         };
-      case  FILTER_PENDING:
-        return {
-          ...state,
-          isLoading: true,
-          filtered: initialState.gastos,
-        };
       case FILTER_SUCCESS:
         console.log(state.gastos);
-        const ordered = payload? state.filtered.sort(function (a, b) {
+        console.log(state.filtered);
+        const ordered = !payload? state.filtered.sort(function (a, b) {
             if (a.importe > b.importe) return 1;
             if (a.importe < b.importe) return -1;
             else return 0;
