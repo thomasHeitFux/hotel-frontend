@@ -4,14 +4,15 @@ import { tiposReducer } from "./reducers/tiposReducer";
 import { metodosReducer } from "./reducers/metodosReducer";
 import { detallesReducer } from "./reducers/detallesReducer";
 import { estructurasReducer } from "./reducers/estructurasReducer";
-import { gastosReducer } from "./reducers/gastosReducer"
+import { gastosReducer,filterReducer } from "./reducers/gastosReducer"
 
 const rootReducer = combineReducers({
   tipos: tiposReducer,
   metodos: metodosReducer,
   estructuras: estructurasReducer,
   detalles: detallesReducer,
-  gastos:gastosReducer
+  gastos:gastosReducer,
+  filtered:filterReducer
 });
 
 export const store = createStore(rootReducer, applyMiddleware(thunk));
