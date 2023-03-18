@@ -26,7 +26,7 @@ export const Gastos = () => {
 
     const gastos = useSelector(state => state.gastos);
     const filtered = useSelector(state => state.filtered);
-    console.log(filtered);
+   
     const show = (id) => {
         swal({
             title: "ELIMINAR",
@@ -57,7 +57,7 @@ export const Gastos = () => {
         toggleFilter()
         dispatch(filterGastos(filter))
     }
-
+    console.log(filtered);
     return (
         <div className="p-8">
            <section className="flex justify-between m-3">
