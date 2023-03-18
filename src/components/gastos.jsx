@@ -24,8 +24,9 @@ export const Gastos = () => {
         dispatch(getGastosAction());
     }, [dispatch]);
 
-    const gastos = useSelector(state => state.filtered);
-
+    const gastos = useSelector(state => state.gastos);
+    const filtered = useSelector(state => state.filtered);
+    console.log(filtered);
     const show = (id) => {
         swal({
             title: "ELIMINAR",
