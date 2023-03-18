@@ -49,7 +49,7 @@ import {
             if (a.importe < b.importe) return -1;
             else return 0;
         })
-            : state.pokemons.sort(function (a, b) {
+            : state.filtered.sort(function (a, b) {
                 if (a.importe > b.importe) return -1;
                 if (a.importe < b.importe) return 1;
                 else return 0;
